@@ -2,6 +2,7 @@
 const chatMessages = document.getElementById('chat-messages');
 const chatInput = document.getElementById('chat-input');
 const sendButton = document.getElementById('send-button');
+const newChatButton = document.getElementById('new-chat');
 
 // Add event listener to the send button
 sendButton.addEventListener('click', () => {
@@ -11,7 +12,30 @@ sendButton.addEventListener('click', () => {
         chatInput.value = '';
         // Placeholder for AI response logic
         addMessageToChat('AI', 'This is a placeholder response.');
+
+        // Show the sidebar if it's hidden
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar.classList.contains('hidden')) {
+            sidebar.classList.remove('hidden');
+            sidebar.classList.add('visible');
+        }
     }
+});
+
+// Add event listener to the new chat button
+newChatButton.addEventListener('click', () => {
+    // Clear chat messages
+    chatMessages.innerHTML = '';
+
+    // Hide the sidebar
+    const sidebar = document.getElementById('sidebar');
+    sidebar.classList.remove('visible');
+    sidebar.classList.add('hidden');
+
+    // Optionally, add a new entry to the chat history
+    const chatHistoryItem = document.createElement('li');
+    chatHistoryItem.textContent = `Chat started at ${new Date().toLocaleTimeString()}`;
+    document.getElementById('history-list').appendChild(chatHistoryItem);
 });
 
 // Updated addMessageToChat function to differentiate user and AI messages
