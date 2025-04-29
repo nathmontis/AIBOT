@@ -7,12 +7,23 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div id="chat-container">
-        <div id="chat-header">Skin Remedies</div>
-        <div id="chat-messages"></div>
-        <div id="chat-input-container">
-            <input type="text" id="chat-input" placeholder="Type your message here...">
-            <button id="send-button">Send</button>
+    <div id="main-container">
+        <div id="sidebar">
+            <div id="new-chat">+ New Chat</div>
+            <div id="chat-history">
+                <h3>Chat History</h3>
+                <ul id="history-list">
+                    <!-- Chat history items will be dynamically added here -->
+                </ul>
+            </div>
+        </div>
+        <div id="chat-container">
+            <div id="chat-header">Skin Remedies</div>
+            <div id="chat-messages"></div>
+            <div id="chat-input-container">
+                <input type="text" id="chat-input" placeholder="Type your message here...">
+                <button id="send-button">Send</button>
+            </div>
         </div>
     </div>
     <script src="script.js"></script>
