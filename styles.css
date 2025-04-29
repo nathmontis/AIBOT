@@ -69,8 +69,8 @@ body {
 
 .chat-message.ai {
     align-self: flex-start;
-    background-color: #b7e4c7; /* Updated to a different tone of green */
-    color: black;
+    background-color: #40916c; /* Updated to a darker green */
+    color: white; /* Ensures text remains visible */
 }
 
 /* Chat input container */
