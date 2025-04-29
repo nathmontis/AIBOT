@@ -46,6 +46,31 @@ body {
     background-color: #f9f9f9;
     font-family: "Times New Roman", serif;
     font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Chat message styles */
+.chat-message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 8px;
+    font-family: "Times New Roman", serif;
+    font-weight: bold;
+    word-wrap: break-word;
+}
+
+.chat-message.user {
+    align-self: flex-end;
+    background-color: #95d5b2;
+    color: white;
+}
+
+.chat-message.ai {
+    align-self: flex-start;
+    background-color: #b7e4c7; /* Updated to a different tone of green */
+    color: black;
 }
 
 /* Chat input container */

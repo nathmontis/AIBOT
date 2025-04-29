@@ -14,10 +14,15 @@ sendButton.addEventListener('click', () => {
     }
 });
 
-// Function to add a message to the chat
+// Updated addMessageToChat function to differentiate user and AI messages
 function addMessageToChat(sender, message) {
     const messageElement = document.createElement('div');
     messageElement.classList.add('chat-message');
+    if (sender === 'You') {
+        messageElement.classList.add('user');
+    } else {
+        messageElement.classList.add('ai');
+    }
     messageElement.innerHTML = `<strong>${sender}:</strong> ${message}`;
     chatMessages.appendChild(messageElement);
     chatMessages.scrollTop = chatMessages.scrollHeight;
